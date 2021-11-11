@@ -18,26 +18,149 @@
             <li class="header_items">
                 <a href="https://lamhuetrung.github.io/index.html">
                     <i class="fas fa-home"></i>
-                    <span>Home</span>
+                    <span></span>
                 </a>
             </li>
            
             <li class="header_items">
                 <a href="#bai-tap">
                     <i class="fas fa-book"></i>
-                    <span>Bài tập</span>
+                    <span></span>
                 </a>
             </li>
             <li class="header_items">
                 <a href="https://www.facebook.com/T%E1%BB%B1-h%E1%BB%8Dc-l%E1%BA%ADp-Tr%C3%ACnh-c%C3%B9ng-LHT-110968584718753">
                     <i class="fas fa-question"></i>
-                    <span>Hỏi</span>
+                    <span></span>
                 </a>
             </li>
         </ul>
     </header>
     <div class="container">
-        <h1>funcion - Hàm</h1>
+        <div class="gird__column-2">
+            <div class="content_LT">
+                <div class="content__BT">
+                    <h1 class="BT__tieu-de">Lý Thuyết</h1>
+                    <span class="BT__noi-dung--TD">Ưu điểm khi sử dụng hàm.</span>
+                    <span class="BT__noi-dung">+ Sử dụng chương trình con khiến code của bạn trông sáng sủa hơn và gọn gàng, người đọc code sẽ dễ hiểu hơn bằng cách nhìn vào từng hàm con ta có thể dễ dàng xác định vai trò của nó trong chương trình.</span>
+                    <span class="BT__noi-dung">+ Dễ dàng quản lý, nâng cấp và tìm lỗi chương trình. Bởi vì bạn biết rõ hàm nào đang làm gì, nếu mà chẳng may gặp lỗi thì bạn cũng nhanh chóng xác định lỗi đó của hàm nào thay vì phải dò từng dòng trong hàm main</span>
+                    <span class="BT__noi-dung">+ Viết 1 lần và gọi được ở nhiều nơi: Khi bạn dùng hàm thì bạn chỉ phải viết một lần và gọi tới nó bất cứ khi nào bạn muốn. Bạn cũng có thể đóng gói các hàm đó để sử dụng cho các chương trình khác</span>
+                    <span class="BT__noi-dung--TD">Cách hoạt động của hàm trong C.</span>
+                    <span class="BT__noi-dung">1. Chương trình của bạn sẽ nhảy tới nơi định nghĩa hàm đó và thực thi các lệnh từ trên xuống dưới ở trong hàm đó..</span>
+                    <span class="BT__noi-dung">2. Khi hàm thực hiện xong, chương trình tiếp tục quay về thực hiện các lệnh phía sau lời gọi hàm.</span>
+                    <span class="BT__noi-dung"><img class="img-LT" src="https://nguyenvanhieu.vn/wp-content/uploads/2019/08/bai-27-ham-trong-c-5.jpg" alt=""></span>
+                    <span class="BT__noi-dung--TD">Các loại hàm trong C</span>
+                    <span class="BT__noi-dung--TD">1. Hàm không có tham số, không có giá trị trả về</span>
+                    <pre class="BT__output-1">
+                        <code class="BT__output">
+#include < stdio.h >
+
+int main() {
+    test(); // gọi hàm
+    return 0;
+}
+
+void test(); // khai báo hàm
+void test() {   // định nghĩa hàm
+    printf("Xin chào các bạn !");
+}
+                  </code>
+                    </pre>
+                    <span class="BT__noi-dung">Như bạn thấy, hàm test() không có tham số đầu vào, bản thân nó tự thực hiện nhận giá trị từ bàn phím, kiểm tra và sau đó cũng in ra kết quả luôn. Vì là nó không trả về giá trị nên chúng ta dùng kiểu void, bạn sẽ học nó ở bài tiếp theo.</span>
+                    <span class="BT__noi-dung--TD">2. Hàm không có tham số, có trả về giá trị</span>
+                    <pre class="BT__output-1">
+                        <code class="BT__output">
+
+#include < stdio.h >
+
+int main() {
+    int n;
+    n = getInteger();
+    for(int i = 1; i <= n; i ++) {
+        printf("%d ", i);
+    }
+    return 0;
+}
+
+int getInteger(); // khai báo hàm
+int getInteger() {   // định nghĩa hàm
+    int n;
+    printf("nhap n");
+    scanf("%d", &n);
+    return n;
+}
+                  </code>
+                    </pre>
+                    <span class="BT__noi-dung">Trong đoạn code trên, hàm getInteger() nhập 1 số từ bàn phím và trả ra cho chúng ta giá trị đó. Như vậy, hàm getInteger() chỉ thực hiện 1 chức năng => ok. Nhưng hàm main vẫn phải đảm nhiệm công việc in ra các số từ 1 đến n.</span>
+                    <pre class="BT__output-1">
+                        <code class="BT__output">
+Khi chạy đoạn code trên sẽ như vậy:
+    Input: nhap n 4 
+    Output: 1 2 3 4
+                        </code>
+                    </pre>
+                    <span class="BT__noi-dung--TD">3. Hàm có tham số, không trả về giá trị</span>
+                    <pre class="BT__output-1">
+                        <code class="BT__output">
+#include < stdio.h >
+
+int main() {
+    int n;
+    printf("nhap vao n");
+    scanf("%d", &n);
+    So_chan(n);
+    return 0;
+}
+
+void So_chan(int n); // khai báo hàm
+void So_chan(int n) {   // định nghĩa hàm
+    if (n % 2 == 0) {
+        printf("n là số chẵn");
+    } else {
+        printf("n là số lẻ");
+    }
+}
+                  </code>
+                    </pre>
+                    <span class="BT__noi-dung">Nhận thấy, hàm So_chan() nhận vào là một số cần kiểm tra, sau đó thực hiện kiểm tra và in ra kết quả.</span>
+                    <span class="BT__noi-dung">+ Hàm So_chan() đang làm 2 việc 1 lúc => cách viết hàm tốt thì 1 hàm chỉ làm 1 việc thôi.</span>
+                    <span class="BT__noi-dung">+ Lần này hàm main đảm nhiệm việc nhập (tốt) => Hàm main nên đảm nhận việc nhận input và xuất output.</span>
+                    <span class="BT__noi-dung--TD">4. Hàm có tham số, có trả về giá trị</span>
+                    <pre class="BT__output-1">
+                        <code class="BT__output">
+#include < stdio.h >
+
+int main() {
+    int n, temp;
+    printf("nhap vao n");
+    scanf("%d", &n);
+    temp = So_chan(n);
+    if (temp == 1) {
+        printf("n là số chẵn");
+    } else {
+        printf("n là số lẻ");
+    }
+    return 0;
+}
+
+int So_chan(int n); // khai báo hàm
+int So_chan(int n) {   // định nghĩa hàm
+    if (n % 2 == 0) {
+        return 1;
+    }
+    return 0;
+}
+                  </code>
+                    </pre>
+                    <span class="BT__noi-dung">Ở trường hợp lần này, hàm So_chan() chỉ nhận nhiệm vụ nhận vào 1 số và kiểm tra xem số đó có phải là số chẵn hay không.</span>
+                    <span class="BT__noi-dung">+ Hàm main đảm nhận nhiệm vụ lấy đầu vào, xuất kết quả => Tuyệt vời.</span>
+                    <span class="BT__noi-dung">+ Hàm con So_chan() chỉ làm 1 việc duy nhất => Tuyệt vời.</span>
+                    <span class="BT__noi-dung">Đọc tới đây bạn đã biết cách sử dụng sử dụng hàm rồi chứ ?, hãy qua phần video xem thêm 1 số ví dụ nữa nhé.</span>
+                    
+                </div>
+            </div>
+            <div class="content__HD">
+                <h1>Làm quen với funcion - Hàm</h1>
         <video class="video" controls>
             <source src="./assets/video/video.webm" type="video/mp4">
         </video>
@@ -61,10 +184,6 @@
                         viết hàm in ra màn hình thông tin cá nhân của bạn (fullname, age, address).
                     </span>
                 </div>
-                <!-- <a class="learn__slide-1">Bài tập 2</a>
-                <a class="learn__slide-1">Bài tập 3</a>
-                <a class="learn__slide-1">Bài tập 4</a> -->
-                
             </div>
         </div>
     </div>
