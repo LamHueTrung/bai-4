@@ -46,7 +46,7 @@
     }
     .content_LT {
         margin: 0 20px;
-        width: 40%;
+        width: 54%;
     }
     .container h1 {
         margin-left: 25px;
@@ -54,7 +54,7 @@
         text-align: inherit;
     }
     .content__HD {
-        width: 44%;
+        width: 60%;
     }
     .video {
         width: 90%;
@@ -64,4 +64,8 @@
     }
     .btn-next {
             margin: 10px 15px;
+    }
+    .container__learn  {
+            margin-left: 0px;
+    }
 }
