@@ -68,4 +68,9 @@
     .container__learn  {
             margin-left: 0px;
     }
+    .BT__noi-dung--TD {
+        display: -webkit-box;
+    font-size: 20px;
+    font-weight: 600;
+    }
 }
