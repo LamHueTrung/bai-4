@@ -71,4 +71,22 @@
     }
     .btn-next {
             margin: 10px 15px;
+    }
+    .content__HD .content__HD--item {
+        margin: 0 2.5%;
+        text-align: center;
+    }
+    .learn__content {
+        display: block;
+    }
+    .learn__ex {
+        display: block;
+    }
+    .noidung-baitap {
+        max-width: 75%;
+        margin: 0;
+    }
+    .noidung-baitap::after {
+        display: none;
+    }
 }
